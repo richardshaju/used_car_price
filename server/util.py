@@ -20,9 +20,9 @@ def get_estimated_price(km, year, brand, fuel):
     if loc_index >= 0:
         x[loc_index] = 1
         
-    return round(__model.predict([x])[0],2)
+    return round(__model.predict([x])[0],0)
 
-def get_location():
+def get_brand():
     load_saved_artifacts()
     return __locations    
 
@@ -40,7 +40,7 @@ def load_saved_artifacts():
          
 if __name__ == '__main__':
     print(load_saved_artifacts())
-    print(get_location())
+    print(get_brand())
     print(get_estimated_price(20000,2019,"bmw",1))
     print(get_estimated_price(20000,2019,"audi",1))
     print(get_estimated_price(20000,2019,"maruti",1))
