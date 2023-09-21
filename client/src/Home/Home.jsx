@@ -32,7 +32,7 @@ function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch("http://127.0.0.1:5000/predict_car_price", {
+    fetch("/api/predict_car_price", {
       method: "POST",
       body: JSON.stringify({
         km: km,
@@ -55,7 +55,7 @@ function Home() {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/get_brand")
+    fetch("/api/get_brand")
       .then((response) => response.json())
       .then((data) => setData(data.brand))
       .catch((error) => console.error("error:" + error));
