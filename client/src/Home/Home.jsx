@@ -32,7 +32,7 @@ function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch("/api/predict_car_price", {
+    fetch("http://ec2-16-16-209-112.eu-north-1.compute.amazonaws.com/predict_car_price", {
       method: "POST",
       body: JSON.stringify({
         km: km,
@@ -55,7 +55,7 @@ function Home() {
   };
 
   useEffect(() => {
-    fetch("/api/get_brand")
+    fetch("http://ec2-16-16-209-112.eu-north-1.compute.amazonaws.com/get_brand")
       .then((response) => response.json())
       .then((data) => setData(data.brand))
       .catch((error) => console.error("error:" + error));

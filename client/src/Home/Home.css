@@ -159,8 +159,7 @@ button:active {
   background-color: #0039d7;
   border-color: #0039d7;
 }
-h3 {
-}
+
 @media screen and (max-width: 425px) {
   .box {
     height: 500px;
