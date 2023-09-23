@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/used_car_price/static/css/main.8ac9dcbe.css",
-    "main.js": "/used_car_price/static/js/main.62efa83e.js",
+    "main.js": "/used_car_price/static/js/main.9c3b9bfa.js",
     "static/js/787.c4e7f8f9.chunk.js": "/used_car_price/static/js/787.c4e7f8f9.chunk.js",
     "index.html": "/used_car_price/index.html",
     "main.8ac9dcbe.css.map": "/used_car_price/static/css/main.8ac9dcbe.css.map",
-    "main.62efa83e.js.map": "/used_car_price/static/js/main.62efa83e.js.map",
+    "main.9c3b9bfa.js.map": "/used_car_price/static/js/main.9c3b9bfa.js.map",
     "787.c4e7f8f9.chunk.js.map": "/used_car_price/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8ac9dcbe.css",
-    "static/js/main.62efa83e.js"
+    "static/js/main.9c3b9bfa.js"
   ]
 }
