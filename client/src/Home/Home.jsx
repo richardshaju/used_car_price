@@ -34,6 +34,7 @@ function Home() {
     event.preventDefault();
     fetch("https://ec2-16-16-209-112.eu-north-1.compute.amazonaws.com/predict_car_price", {
       method: "POST",
+      mode: 'cors',
       body: JSON.stringify({
         km: km,
         year: year,
