@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>Used Car Price Estimator</title>
+  </head>
+  <body>
+    <div class="home">
+      <div class="background"></div>
+      <div class="parent">
+        <div class="box">
+          <h1>USED CAR PRICE ESTIMATOR</h1>
+          <div class="text">
+            <h4>
+              A used car price estimator is a valuable tool that assists
+              individuals in determining the approximate value of pre-owned
+              vehicles. By analyzing various factors such as the car's make,
+              model, year, mileage, condition, and market trends, the estimator
+              provides users with an educated estimate of what the vehicle could
+              be worth in the current market.
+            </h4>
+          </div>
+          <form action="#" id="carForm">
+              <div class="wrapper">
+                <div class="row_1">
+                  <p>BRAND</p>
+                  <div class="custom-select">
+                    <input type="text" value="AUDI" readonly id="brandInput" />
+                    <div class="option" id="brandOptions">
+                      <!-- Brand options will be generated here -->
+                    </div>
+                  </div>
+
+                  <p>DRIVEN KILOMETER</p>
+                  <div class="custom-select">
+                    <input
+                      class="kilometer"
+                      type="text"
+                      value="20000"
+                      id="kmInput"
+                    />
+                    <p style="color: red" id="kmError"></p>
+                  </div>
+                </div>
+
+                <div class="row_2">
+                  <p>MANUFACTURE YEAR</p>
+                  <div class="custom-select">
+                    <input type="text" value="2022" readonly id="yearInput" />
+                    <div class="option" id="yearOptions">
+                      <!-- Year options will be generated here -->
+                    </div>
+                  </div>
+                  <p>FUEL TYPE</p>
+                  <div class="custom-select">
+                    <input type="text" value="PETROL" readonly id="fuelInput" />
+                    <div class="option" id="fuelOptions"></div>
+                  </div>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit">ESTIMATE PRICE</button>
+            </div>
+          </form>
+          <h3 id="result"></h3>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
