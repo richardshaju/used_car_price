@@ -239,7 +239,7 @@
 footer{
   width: 100%;
   font-size: 16px;
-  background-color: #b2b2b2;
+  background-color: #d9d9d9;
   height: 57px;
   display: flex;
   align-items: center;
@@ -274,8 +274,9 @@ footer{
     .box {
       height: 443px;
       background-color: rgb(255, 255, 255, 0.7);
-      width: 350px;
+      width: 301px;
       font-size: 11px;
+      padding: 14px;
     }
     input {
      font-size: 10px;
@@ -297,7 +298,7 @@ footer{
       width: 0;
     }
     #result{
-      font-size: 12px;
+      margin-top: 10px;
     }
     footer{
       font-size: 13px;
