@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+}
+
 .background {
     background-image: url("https://www.motortrend.com/uploads/sites/5/2020/11/2021-MotorTrend-Car-of-the-Year-group-shot-1.jpg?fit=around%7C875:492");
     background-position-x: center;
@@ -15,6 +19,7 @@
     display: flex;
     height: 800px;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
   }
   .box {
@@ -26,7 +31,7 @@
     align-items: center;
     border-radius: 40px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255, 0.7);
     font-size: 14px;
     color: black;
     align-items: center;
@@ -168,7 +173,7 @@
     background-color: #0039d7;
     border-color: #0039d7;
   }
-
+ 
   .fuel_type{
     margin-top: 5px;
     outline: 0;
@@ -231,14 +236,46 @@
 .select .custom-options li:hover {
     background-color: #f2f2f2;
 }
-
-
+footer{
+  width: 100%;
+  font-size: 16px;
+  background-color: #b2b2b2;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+@media screen and (max-width: 597px) {
+  .box {
+    width: 340px;
+  }
+  input {
+    font-size: 10px;
+     height: 1rem;
+     width: 6rem;
+     font-weight: 600;
+     padding: 5px;
+   }
+   .row_1 p,
+   .row_2 p{
+     font-size: 10px;
+   }
+   .custom-select{
+    width: 0;
+  }
+}
 
   @media screen and (max-width: 425px) {
+    .background{
+      filter: blur(2px);
+    }
+    
     .box {
-      height: 500px;
-      width: 300px;
-      font-size: 8px;
+      height: 443px;
+      background-color: rgb(255, 255, 255, 0.7);
+      width: 350px;
+      font-size: 11px;
     }
     input {
      font-size: 10px;
@@ -258,6 +295,12 @@
     }
     .custom-select{
       width: 0;
+    }
+    #result{
+      font-size: 12px;
+    }
+    footer{
+      font-size: 13px;
     }
   }
   
