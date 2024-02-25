@@ -1,7 +1,5 @@
 import json
 import pickle
-import os 
-import sklearn
 import numpy as np
 __locations  = None
 __data_columns = None

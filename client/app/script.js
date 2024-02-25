@@ -2,7 +2,7 @@ let brands = [];
 
 function onPageLoad() {
   console.log("loading..");
-  var url = "/api/get_brand";
+  var url = "http://127.0.0.1:5000/get_brand";
   $.get(url, function (data, status) {
     console.log("Response got");
     if (data) {
