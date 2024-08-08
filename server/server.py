@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify,make_response
 import util
-from flask_cors import CORS
+
 app = Flask(__name__)
-CORS(app)  
+
 
 
 @app.route('/')
 def hello():
-    return "Hello World!"
+    return "API"
 
 @app.route('/get_brand')
 def get_brand():
@@ -37,5 +37,4 @@ def predict_car_price():
 
 
 if __name__ == "__main__":
-    print("starting")
     app.run()

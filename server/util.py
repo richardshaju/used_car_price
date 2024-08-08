@@ -1,9 +1,16 @@
 import json
 import pickle
 import numpy as np
+import os
 __locations  = None
 __data_columns = None
 __model = None
+
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(base_dir, 'artifacts', 'columns.json')
+
+
 
 def get_estimated_price(km, year, brand, fuel):
     try:
@@ -25,15 +32,21 @@ def get_brand():
     return __locations    
 
 def load_saved_artifacts():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the full paths to the files
+    columns_file_path = os.path.join(base_dir, 'artifacts', 'columns.json')
+    model_file_path = os.path.join(base_dir, 'artifacts', 'car_prices.pickle')
+    
     print("Loading Arftifact")
     global __data_columns
     global __locations
     global __model
-    with open("./artifacts/columns.json", 'r') as f:
+    with open(columns_file_path, 'r') as f:
        __data_columns =  json.load(f)['data_columns']
        __locations = __data_columns[2:-2]
         
-    with open("./artifacts/car_prices.pickle", 'rb') as f:
+    with open(model_file_path, 'rb') as f:
          __model = pickle.load(f)
          
 if __name__ == '__main__':
