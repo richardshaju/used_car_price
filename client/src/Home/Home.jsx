@@ -8,7 +8,7 @@ function Home() {
   const [isValid, setIsValid] = useState(true);
   const [data, setData] = useState("");
 
-  const [brand, setBrand] = useState("Audi");
+  const [brand, setBrand] = useState("audi");
   const [year, setYear] = useState(2022);
   const [km, setKm] = useState(20000);
   const [fuel, setFuel] = useState(1);
@@ -32,7 +32,7 @@ function Home() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch("http://ec2-16-16-209-112.eu-north-1.compute.amazonaws.com/predict_car_price", {
+    fetch("http://127.0.0.1:5000/predict_car_price", {
       method: "POST",
       mode: 'cors',
       body: JSON.stringify({
@@ -56,7 +56,7 @@ function Home() {
   };
 
   useEffect(() => {
-    fetch("http://ec2-16-16-209-112.eu-north-1.compute.amazonaws.com/get_brand")
+    fetch("http://127.0.0.1:5000/get_brand")
       .then((response) => response.json())
       .then((data) => setData(data.brand))
       .catch((error) => console.error("error:" + error));
@@ -91,7 +91,7 @@ function Home() {
                   />
                   {isOpenBrand && (
                     <div className="option">
-                      {data.map((item) => (
+                      {data?.map((item) => (
                         <p
                           onClick={() => {
                             setBrand(item);

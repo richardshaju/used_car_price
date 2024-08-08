@@ -1,42 +1,49 @@
-from flask import Flask, request, jsonify,make_response
+from flask import Flask, request, jsonify, make_response
 import util
-import os 
+import os
 
 app = Flask(__name__)
 
 
-
-@app.route('/')
+@app.route("/")
 def hello():
     return "API"
 
-@app.route('/get_brand')
+
+@app.route("/get_brand")
 def get_brand():
-    response = jsonify({
-        'brand' : util.get_brand()
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    response = jsonify({"brand": util.get_brand()})
+    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
-@app.route('/predict_car_price', methods=['POST'])
+
+@app.route("/predict_car_price", methods=["POST", "OPTIONS"])
 def predict_car_price():
+
+    if request.method == "OPTIONS":
+        response = jsonify({})
+        response.headers.add("Access-Control-Allow-Origin", "*")
+        response.headers.add("Access-Control-Allow-Methods", "POST, OPTIONS")
+        response.headers.add("Access-Control-Allow-Headers", "Content-Type")
+        return response
+
     data = request.get_json()
-    
-    km = int(data.get('km'))
-    year = int(data.get('year'))
-    brand = data.get('brand')
-    fuel = data.get('fuel')
-    
+
+    km = int(data.get("km"))
+    year = int(data.get("year"))
+    brand = data.get("brand")
+    fuel = data.get("fuel")
+
     print(km)
     print(brand)
-    response = jsonify({
-        'estimated_price' : util.get_estimated_price(km,year,brand,fuel)
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
 
+    response = jsonify(
+        {"estimated_price": util.get_estimated_price(km, year, brand, fuel)}
+    )
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    return response
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host="0.0.0.0", port=port)
