@@ -4,13 +4,7 @@
     "builds": [
       {
         "src": "server.py",
-        "use": "@vercel/python",
-        "config": {
-          "buildCommand": "python server.py",
-          "outputDirectory": ".",
-          "installCommand": "pip install -r requirements.txt",
-          "runtime": "python3.9"
-        }
+        "use": "@vercel/python"
       }
     ],
     "routes": [
