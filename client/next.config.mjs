@@ -1,8 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = { 
-    output: "export",
-    images: { unoptimized: true }
-  }
-  
-  export default nextConfig;
-  
+// next.config.mjs
+import path from 'path';
+
+export default {
+  reactStrictMode: true,
+  webpack(config) {
+    config.resolve.alias['@'] = path.resolve('./src');
+    return config;
+  },
+  experimental: {
+    appDir: true,
+  },
+};
