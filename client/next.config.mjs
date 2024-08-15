@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output:'export',
-    static_site_generator: 'next'
-};
+const nextConfig = { output: "export",images: { unoptimized: true }}
 
-export default nextConfig;
+module.exports = nextConfig
