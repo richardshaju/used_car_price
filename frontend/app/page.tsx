@@ -172,11 +172,11 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
   
-  return (
+  return ( 
     <>
       <div>
         {loading && (
-          <div className="fixed inset-0 flex items-center justify-center flex-col gap-2 bg-white z-50">
+          <div className="fixed h-screen inset-0 flex items-center justify-center flex-col gap-2 bg-white z-50">
             <Image
               className="rounded-3xl animate-pulse"
               src={"/logo.jpg"}
